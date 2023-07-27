@@ -14,7 +14,6 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import { Link, NavLink } from "react-router-dom";
-import { createStyles, makeStyles } from "@mui/styles";
 import CompanyTitle from "./CompanyTitle";
 import { contactData } from "../data";
 import { useTheme } from "@mui/material/styles";
@@ -26,32 +25,9 @@ import {
   companyLogo,
 } from "../constant";
 
-const useStyles = makeStyles((theme) =>
-  createStyles({
-    activeLink: {
-      color: "darkcyan",
-      textDecoration: "underline",
-      textDecorationThickness: 3,
-    },
-  })
-);
-
-const MyNavLink = React.forwardRef((props, ref) => (
-  <NavLink
-    ref={ref}
-    to={props.to}
-    className={({ isActive }) =>
-      `${props.className} ${isActive ? props.activeClassName : ""}`
-    }
-  >
-    {props.children}
-  </NavLink>
-));
-
 function Appbar(props) {
   const theme = useTheme();
   const { window } = props;
-  const classes = useStyles();
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -181,8 +157,7 @@ function Appbar(props) {
         >
           {navigationItems.map((item, index) => (
             <Typography
-              component={MyNavLink}
-              activeClassName={classes.activeLink}
+              component={NavLink}
               to={item.url}
               key={index}
               variant="h6"
@@ -190,6 +165,11 @@ function Appbar(props) {
                 color: "#000",
                 textDecoration: "none",
                 letterSpacing: "0.1rem",
+                "&.active": {
+                  color: "darkcyan",
+                  textDecoration: "underline",
+                  textDecorationThickness: 3,
+                },
               }}
             >
               {item.name}
