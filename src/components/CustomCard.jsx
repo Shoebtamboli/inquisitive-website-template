@@ -18,7 +18,11 @@ const CustomCard = ({ item }) => {
         <Typography gutterBottom variant="h5" component="div">
           {item.title}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography
+          variant="body2"
+          color="text.secondary"
+          sx={{ whiteSpace: "pre-line" }}
+        >
           {item.subTitle}
         </Typography>
         <Stack direction="row" spacing={1} alignItems="center">
@@ -46,14 +50,14 @@ const CustomCard = ({ item }) => {
             window.scroll({
               top: 0,
               left: 0,
-              behavior: "smooth"
+              behavior: "smooth",
             });
           }}
           sx={{
             ":hover": {
               bgcolor: theme.palette.primary.main, // theme.palette.primary.main
-              color: theme.palette.common.white
-            }
+              color: theme.palette.common.white,
+            },
           }}
         >
           Learn More

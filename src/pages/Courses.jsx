@@ -24,7 +24,7 @@ const Courses = () => {
           display: "flex",
           backgroundColor: theme.palette.common.white,
           backgroundImage: `url(${coursesImage})`,
-          backgroundAttachment: "fixed"
+          backgroundAttachment: "fixed",
         }}
       >
         <Container maxWidth="lg">
@@ -32,7 +32,7 @@ const Courses = () => {
           <Box
             sx={{
               mt: 10,
-              mb: 10
+              mb: 10,
             }}
           >
             <Stack
@@ -52,14 +52,14 @@ const Courses = () => {
       <Box
         sx={{
           display: "flex",
-          backgroundColor: "white"
+          backgroundColor: "white",
         }}
       >
         <Container maxWidth="md">
           <Box
             sx={{
               mt: 10,
-              mb: 4
+              mb: 4,
             }}
           >
             <Typography variant="h3" align="center" gutterBottom>
@@ -72,7 +72,7 @@ const Courses = () => {
               justifyContent="center"
               alignItems="center"
               sx={{
-                mt: 6
+                mt: 6,
               }}
             >
               {courseList?.map((item, index) => (
@@ -85,7 +85,7 @@ const Courses = () => {
                         sx={{
                           width: 380,
                           height: 250,
-                          display: { xs: "none", sm: "block" }
+                          display: { xs: "none", sm: "block" },
                         }}
                         image={item.icon}
                         alt="image text"
@@ -98,6 +98,7 @@ const Courses = () => {
                           variant="body2"
                           color="text.secondary"
                           paragraph
+                          sx={{ whiteSpace: "pre-line" }}
                         >
                           {item.desciption}
                         </Typography>

@@ -17,7 +17,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 const NewsLetter = () => {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-
+  const [email, setEmail] = React.useState("");
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
       return;
@@ -27,8 +27,9 @@ const NewsLetter = () => {
   };
 
   const onSubmit = (e) => {
-    console.log(e);
+    e.preventDefault();
     setOpen(true);
+    setEmail(""); // Clear the email value after submitting the form
   };
 
   return (
@@ -37,7 +38,7 @@ const NewsLetter = () => {
         display: "flex",
         backgroundColor: "mediumturquoise",
         borderTop: `1px solid ${theme.palette.divider}`,
-        py: [3, 6]
+        py: [3, 6],
       }}
     >
       <Container maxWidth="lg">
@@ -63,6 +64,8 @@ const NewsLetter = () => {
                 variant="filled"
                 placeholder="johndoe@gmail.com"
                 required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
               <Button
                 variant="contained"

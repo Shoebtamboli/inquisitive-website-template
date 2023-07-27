@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import CssBaseline from "@mui/material/CssBaseline";
 import NewsLetter from "./components/NewsLetter";
 import Footer from "./components/Footer";
@@ -15,7 +15,6 @@ import NotFoundPage from "./pages/NotFoundPage";
 const theme = createTheme();
 
 export default function App() {
-  const location = useLocation();
   return (
     <React.Fragment>
       <ThemeProvider theme={theme}>
@@ -31,10 +30,8 @@ export default function App() {
           <Route path="/*" element={<NotFoundPage />} />
         </Routes>
 
-        {location.pathname !== "*" &&
-          !location.pathname.match(/^\/\w+\/?$/i) && <NewsLetter />}
-        {location.pathname !== "*" &&
-          !location.pathname.match(/^\/\w+\/?$/i) && <Footer />}
+        <NewsLetter />
+        <Footer />
       </ThemeProvider>
     </React.Fragment>
   );

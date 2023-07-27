@@ -12,9 +12,9 @@ import { companySubText, footerName, footerLink } from "../constant";
 
 function Copyright() {
   return (
-    <Typography variant="body2" color="text.secondary" align="center">
+    <Typography variant="body2" color="text.secondary" align="left">
       {"Copyright © "}
-      <Link color="inherit" href={footerLink}>
+      <Link color="inherit" href={footerLink} rel="noopener" target="_blank">
         {footerName}
       </Link>{" "}
       {new Date().getFullYear()}
@@ -32,7 +32,7 @@ export default function Footer() {
         display: "flex",
         bgcolor: theme.palette.common.white,
         borderTop: `1px solid ${theme.palette.divider}`,
-        py: [3, 6]
+        py: [3, 6],
       }}
     >
       <Container maxWidth="lg" component="footer">
@@ -45,9 +45,16 @@ export default function Footer() {
             </Typography>
 
             {socialMediaList.map((media, index) => (
-              <Button color="inherit" size="large" key={index}>
-                {media}
-              </Button>
+              <Link
+                color="inherit"
+                href={media.url}
+                rel="noopener"
+                target="_blank"
+              >
+                <Button color="inherit" size="large" key={index}>
+                  {media.icon}
+                </Button>
+              </Link>
             ))}
           </Grid>
           {footers.map((footer) => (
@@ -56,15 +63,15 @@ export default function Footer() {
                 {footer.title}
               </Typography>
               <ul>
-                {footer.description.map((item) => (
-                  <li key={item}>
+                {footer.description.map((item, index) => (
+                  <li key={index}>
                     <Link
-                      href="#"
+                      href={item.url}
                       variant="subtitle1"
                       color="text.secondary"
                       sx={{ textDecoration: "none" }}
                     >
-                      {item}
+                      {item.name}
                     </Link>
                   </li>
                 ))}
@@ -72,7 +79,7 @@ export default function Footer() {
             </Grid>
           ))}
         </Grid>
-        <Copyright sx={{ mt: 10 }} />
+        <Copyright />
       </Container>
     </Box>
   );

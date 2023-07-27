@@ -7,9 +7,18 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import { companyAddress, companyTimings, companyPhoneNo } from "./constant";
 
 export const socialMediaList = [
-  <FacebookIcon />,
-  <TwitterIcon />,
-  <InstagramIcon />,
+  {
+    icon: <FacebookIcon />,
+    url: "https://www.instagram.com/inquisitive.institute/",
+  },
+  {
+    icon: <TwitterIcon />,
+    url: "https://www.instagram.com/inquisitive.institute/",
+  },
+  {
+    icon: <InstagramIcon />,
+    url: "https://www.instagram.com/inquisitive.institute/",
+  },
 ];
 
 export const contactData = [
@@ -31,8 +40,7 @@ export const courseList = [
   {
     icon: "../images/web-development.png",
     title: "HTML, CSS, and Javascript for Web Developers",
-    desciption:
-      "As a platform, Angular includes: component-based framework for building scalable web applications. collection of well-integrated libraries that cover a wide variety of features, including routing, forms management, client-server communication, and more",
+    desciption: `HTML: Learn the fundamental language for web structure and content, using elements to create web pages and enhance accessibility.\n CSS: Discover the language for web page styling, controlling layout, design, and responsiveness for visually appealing websites.\n  JavaScript: Master the versatile programming language for web interactivity, creating dynamic elements and building powerful web applications. Combine HTML, CSS, and JavaScript to become a skilled web developer.`,
     author: "by John doe",
     rating: 5,
     duration: "3 Months",
@@ -42,7 +50,7 @@ export const courseList = [
     icon: "../images/frontend-development.webp",
     title: "Frontend development with React",
     desciption:
-      "As a platform, Angular includes: component-based framework for building scalable web applications. collection of well-integrated libraries that cover a wide variety of features, including routing, forms management, client-server communication, and more",
+      "Learn modern web development using React, a powerful JavaScript library. Build interactive user interfaces, manage state, and create reusable components to develop dynamic and responsive websites. Gain hands-on experience in front-end development and become proficient in building web applications with React.",
     author: "by John doe",
     rating: 5,
     duration: "3 Months",
@@ -52,7 +60,7 @@ export const courseList = [
     icon: "../images/backend-development.png",
     title: "Backend development with Python",
     desciption:
-      "As a platform, Angular includes: component-based framework for building scalable web applications. collection of well-integrated libraries that cover a wide variety of features, including routing, forms management, client-server communication, and more",
+      "Explore the world of server-side programming using Python. Learn to build robust and scalable web applications, handle data storage, create APIs, and manage server operations. Gain the skills to develop efficient and secure backend systems to power dynamic websites and web applications.",
     author: "by John doe",
     rating: 5,
     duration: "3 Months",
@@ -62,7 +70,7 @@ export const courseList = [
     icon: "../images/full-stack-development.jpg",
     title: "Full Stack development (backend + frontend)",
     desciption:
-      "As a platform, Angular includes: component-based framework for building scalable web applications. collection of well-integrated libraries that cover a wide variety of features, including routing, forms management, client-server communication, and more",
+      "Become a versatile web developer by mastering both backend and frontend technologies. Learn to build interactive user interfaces with HTML, CSS, and JavaScript, and develop server-side applications using popular backend languages like Python, Ruby, or Node.js. Acquire the skills to create dynamic, feature-rich web applications from start to finish.",
     author: "by John doe",
     rating: 5,
     duration: "6 Months",
@@ -72,7 +80,7 @@ export const courseList = [
     icon: "../images/dbAdmin.jpg",
     title: "Database Administrator (DBMS + SQL)",
     desciption:
-      "As a platform, Angular includes: component-based framework for building scalable web applications. collection of well-integrated libraries that cover a wide variety of features, including routing, forms management, client-server communication, and more",
+      "Gain expertise in Database Management Systems (DBMS) and SQL to efficiently manage, optimize, and secure databases. Learn to design, implement, and troubleshoot database systems, ensuring data integrity and availability. Become proficient in SQL queries to retrieve, manipulate, and analyze data for effective decision-making and data-driven applications.",
     author: "by John doe",
     rating: 5,
     duration: "6 Months",
@@ -82,7 +90,7 @@ export const courseList = [
     icon: "../images/machine-learning.webp",
     title: "Machine Learning with Python and tensorflow",
     desciption:
-      "As a platform, Angular includes: component-based framework for building scalable web applications. collection of well-integrated libraries that cover a wide variety of features, including routing, forms management, client-server communication, and more",
+      "Unlock the power of machine learning using Python and TensorFlow framework. Acquire skills in data preprocessing, model creation, and evaluation for various ML algorithms. Harness deep learning capabilities to build and deploy advanced AI applications, making significant advancements in artificial intelligence and data-driven solutions.",
     author: "by John doe",
     rating: 5,
     duration: "6 Months",
@@ -114,7 +122,24 @@ export const learnInfo = [
 export const footers = [
   {
     title: "Company",
-    description: ["Home", "About", "Courses", "Contact"],
+    description: [
+      {
+        name: "Home",
+        url: "/",
+      },
+      {
+        name: "About",
+        url: "/about",
+      },
+      {
+        name: "Courses",
+        url: "/courses",
+      },
+      {
+        name: "Contact",
+        url: "/contact",
+      },
+    ],
   },
   // {
   //   title: "Features",
@@ -132,7 +157,16 @@ export const footers = [
   // },
   {
     title: "Legal",
-    description: ["Privacy policy", "Terms of use"],
+    description: [
+      {
+        name: "Privacy policy",
+        url: "/privacy",
+      },
+      {
+        name: "Terms of use",
+        url: "/terms",
+      },
+    ],
   },
 ];
 
