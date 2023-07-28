@@ -24,13 +24,13 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 });
 
 const validationSchema = Yup.object().shape({
-  email: Yup.string().required("Required")
+  email: Yup.string().required("Required"),
 });
 
 const defaultValues = {
   email: "",
   phone: "",
-  message: ""
+  message: "",
 };
 
 const Contact = () => {
@@ -47,7 +47,7 @@ const Contact = () => {
 
   const { handleSubmit, control, reset } = useForm({
     defaultValues: defaultValues,
-    resolver: yupResolver(validationSchema)
+    resolver: yupResolver(validationSchema),
   });
 
   const onSubmit = (data) => {
@@ -63,7 +63,7 @@ const Contact = () => {
           display: "flex",
           backgroundColor: theme.palette.common.white,
           backgroundImage: `url(${contactImage})`,
-          backgroundAttachment: "fixed"
+          backgroundAttachment: "fixed",
         }}
       >
         <Container maxWidth="lg">
@@ -71,7 +71,7 @@ const Contact = () => {
           <Box
             sx={{
               mt: 10,
-              mb: 10
+              mb: 10,
             }}
           >
             <Stack
@@ -90,17 +90,16 @@ const Contact = () => {
       </Box>
 
       <Box
-        id="#contact"
         sx={{
           bgcolor: "background.paper",
-          p: 2
+          p: 2,
         }}
       >
         <Container
           maxWidth="lg"
           sx={{
             mt: 10,
-            mb: 4
+            mb: 4,
           }}
         >
           <Grid container>
@@ -125,7 +124,7 @@ const Contact = () => {
                     rules={{ required: true }}
                     render={({
                       field: { onChange, value, onBlur },
-                      fieldState: { error }
+                      fieldState: { error },
                     }) => {
                       return (
                         <TextField
@@ -149,7 +148,7 @@ const Contact = () => {
                     control={control}
                     render={({
                       field: { onChange, value, ref },
-                      fieldState: { error }
+                      fieldState: { error },
                     }) => {
                       return (
                         <TextField
@@ -174,7 +173,7 @@ const Contact = () => {
                     control={control}
                     render={({
                       field: { onChange, value, ref },
-                      fieldState: { error }
+                      fieldState: { error },
                     }) => {
                       return (
                         <TextField
@@ -202,7 +201,7 @@ const Contact = () => {
                     variant="contained"
                     sx={{
                       mt: 3,
-                      mb: 2
+                      mb: 2,
                       // "&:hover": {
                       //   "&:after": {
                       //     opacity: 1,
