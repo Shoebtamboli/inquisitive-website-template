@@ -2,19 +2,25 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import Link from "@mui/material/Link";
+//import Link from "@mui/material/Link";
 import Button from "@mui/material/Button";
 import { Grid } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import CompanyTitle from "./CompanyTitle";
 import { footers, socialMediaList } from "../data";
 import { companySubText, footerName, footerLink } from "../constant";
+import { Link } from "react-router-dom";
 
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="left">
       {"Copyright © "}
-      <Link color="inherit" href={footerLink} rel="noopener" target="_blank">
+      <Link
+        to={footerLink}
+        target="_blank"
+        rel="noopener"
+        style={{ textDecoration: "none", color: "inherit" }}
+      >
         {footerName}
       </Link>{" "}
       {new Date().getFullYear()}
@@ -45,13 +51,25 @@ export default function Footer() {
             </Typography>
 
             {socialMediaList.map((media, index) => (
+              // <Link
+              //   color="inherit"
+              //   href={media.url}
+              //   rel="noopener"
+              //   target="_blank"
+              // >
+              //   <Button color="inherit" size="large" key={index}>
+              //     {media.icon}
+              //   </Button>
+              // </Link>
+
               <Link
-                color="inherit"
-                href={media.url}
-                rel="noopener"
+                to={media.url}
                 target="_blank"
+                rel="noopener"
+                key={index}
+                style={{ textDecoration: "none", color: "inherit" }}
               >
-                <Button color="inherit" size="large" key={index}>
+                <Button color="inherit" size="large">
                   {media.icon}
                 </Button>
               </Link>
@@ -65,11 +83,18 @@ export default function Footer() {
               <ul>
                 {footer.description.map((item, index) => (
                   <li key={index}>
-                    <Link
+                    {/* <Link
                       href={item.url}
                       variant="subtitle1"
                       color="text.secondary"
                       sx={{ textDecoration: "none" }}
+                    >
+                      {item.name}
+                    </Link> */}
+                    <Link
+                      to={item.url}
+                      key={index}
+                      style={{ textDecoration: "none", color: "inherit" }}
                     >
                       {item.name}
                     </Link>
